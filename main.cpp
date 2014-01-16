@@ -292,7 +292,7 @@ int choose_move(const char (&board)[XMAX][YMAX], bool to_move)
 	    }
 
 	  int val = minimax(brd, DEPTH, NINFINITI, INFINITI, !to_move);
-	  cout << val << endl;
+	  //cout << val << endl;
 
 	  if(to_move)
 	    {
