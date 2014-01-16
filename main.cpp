@@ -1,4 +1,6 @@
 // ConnectFour.cpp
+#defien DEPTH 8
+
 #include <iostream>
 #include <cstring>
 #include <vector>
@@ -245,10 +247,8 @@ int minimax(char (&board)[XMAX][YMAX], int depth, int alpha, int beta, bool maxi
     }
   else
     {
-      //int bestVal = (maximizingPlayer) ? NINFINITI : INFINITI;
       char brd[XMAX][YMAX];
 
-      // for each legal move
       for (int i = 0; i < XMAX; ++i)
 	{
 	  memcpy(brd, board, XMAX * YMAX * sizeof(char));
@@ -263,11 +263,8 @@ int minimax(char (&board)[XMAX][YMAX], int depth, int alpha, int beta, bool maxi
 		  beta = min(val, beta);
 	      if( beta <= alpha )
 		break;
-	      
-	      //bestVal = (maximizingPlayer) ? max(bestVal, val) : min(bestVal, val);
 	    }
 	}
-      //return bestVal;
       return (maximizingPlayer) ? alpha : beta;
     }
 }
@@ -294,8 +291,7 @@ int choose_move(const char (&board)[XMAX][YMAX], bool to_move)
 	      break;
 	    }
 
-	  //int val = minimax(brd, 6, false);
-	  int val = minimax(brd, 8, NINFINITI, INFINITI, !to_move);
+	  int val = minimax(brd, DEPTH, NINFINITI, INFINITI, !to_move);
 	  cout << val << endl;
 
 	  if(to_move)
