@@ -1,5 +1,5 @@
 // ConnectFour.cpp
-#defien DEPTH 8
+#define DEPTH 8
 
 #include <iostream>
 #include <cstring>
