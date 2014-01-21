@@ -90,6 +90,7 @@ int main(int argc, char *argv[])
     }
   if (!win)
     {
+      cout << endl << endl << "---------------------\n" << endl;
       print_board(board);
       cout << "TIE!" << endl;
     }
